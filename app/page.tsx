@@ -4,6 +4,7 @@ import { catalogItems, buildWhatsAppLink } from "@/lib/catalog";
 import { MobileHeader } from "@/components/site/mobile-header";
 import { ScrollReveal } from "@/components/site/scroll-reveal";
 import { SiteFooter } from "@/components/site/site-footer";
+import { TestimonialsCarousel } from "@/components/site/testimonials-carousel";
 
 const gallery = [
   { src: "/mobile-assets/20.jpg", alt: "Mesas e cadeiras em ambiente verde para evento", className: "tile tile-a" },
@@ -40,12 +41,22 @@ export default function Home() {
           unoptimized
         />
         <div className="hero-copy reveal is-visible">
-          <h1 id="hero-title">
-            <span className="hero-title-combined">
-              <span>Mobiliários</span>
-              <span>exclusivos &</span>
+          <h1 id="hero-title" aria-label="Mobiliários exclusivos & cenografia">
+            <span className="hero-title-set hero-title-set-desktop" aria-hidden="true">
+              <span className="hero-title-line">Mobiliários exclusivos</span>
+              <span className="hero-title-line">& cenografia</span>
             </span>
-            <span>cenografia</span>
+            <span className="hero-title-set hero-title-set-mid" aria-hidden="true">
+              <span className="hero-title-line">Mobiliários</span>
+              <span className="hero-title-line">exclusivos &</span>
+              <span className="hero-title-line">cenografia</span>
+            </span>
+            <span className="hero-title-set hero-title-set-mobile" aria-hidden="true">
+              <span className="hero-title-line">Mobiliários</span>
+              <span className="hero-title-line">exclusivos</span>
+              <span className="hero-title-line hero-title-amp">&</span>
+              <span className="hero-title-line">cenografia</span>
+            </span>
           </h1>
           <a className="micro-link light" href="#sobre">
             Navegar
@@ -112,22 +123,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="testimonial-section reveal" aria-labelledby="clients-title">
-        <button className="slider-arrow" aria-label="Depoimento anterior" type="button">
-          ←
-        </button>
-        <div>
-          <h2 id="clients-title">O que nossos clientes dizem</h2>
-          <blockquote>
-            A Mobile organizou a estrutura e o mobiliário do nosso casamento com cuidado, agilidade e um olhar muito
-            refinado. Cada peça ajudou a valorizar a experiência dos convidados.
-          </blockquote>
-          <p className="quote-author">Cliente de casamento - Salvador, Bahia</p>
-        </div>
-        <button className="slider-arrow" aria-label="Próximo depoimento" type="button">
-          →
-        </button>
-      </section>
+      <TestimonialsCarousel />
 
       <section id="catalogo" className="services-section reveal" aria-labelledby="catalog-title">
         <h2 id="catalog-title">Locar / Criar / Realizar</h2>
@@ -185,6 +181,9 @@ export default function Home() {
           <a className="small-button muted" href="https://www.instagram.com/mobileeventos/" target="_blank" rel="noreferrer">
             Ver novidades
           </a>
+          <a className="instagram-link" href="https://www.instagram.com/mobileeventos/" target="_blank" rel="noreferrer">
+            & visite nosso instagram
+          </a>
         </div>
         <div className="instagram-collage" aria-label="Bastidores e referências de eventos">
           <Image className="insta-a" src="/mobile-assets/20.jpg" alt="Mesa com cadeiras em ambiente verde" width={1440} height={1920} unoptimized />
@@ -194,9 +193,6 @@ export default function Home() {
           <Image className="insta-b" src="/mobile-assets/25.jpg" alt="Cenografia floral amarela" width={1440} height={1920} unoptimized />
           <Image className="insta-c" src="/mobile-assets/24.jpg" alt="Lounge com mobiliário natural" width={1440} height={1920} unoptimized />
           <Image className="insta-d" src="/mobile-assets/8.jpg" alt="Detalhe de arranjos e iluminação" width={3024} height={3780} unoptimized />
-          <a className="instagram-link" href="https://www.instagram.com/mobileeventos/" target="_blank" rel="noreferrer">
-            & visite nosso instagram
-          </a>
         </div>
       </section>
 
