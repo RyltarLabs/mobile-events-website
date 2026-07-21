@@ -25,7 +25,9 @@ const contentTypes = {
 
 function resolveAssetPath(pathname) {
   const decodedPath = decodeURIComponent(pathname);
-  const safePath = normalize(decodedPath).replace(/^(\.\.[/\\])+/, "");
+  const safePath = normalize(decodedPath)
+    .replace(/^[/\\]+/, "")
+    .replace(/^(\.\.[/\\])+/, "");
   return join(clientRoot, safePath);
 }
 
@@ -57,6 +59,12 @@ async function fetchAsset(request) {
 }
 
 async function handleWebRequest(request) {
+  const staticResponse = await fetchAsset(request);
+
+  if (staticResponse.status !== 404) {
+    return staticResponse;
+  }
+
   return worker.fetch(request, {
     ASSETS: { fetch: fetchAsset },
   }, {
