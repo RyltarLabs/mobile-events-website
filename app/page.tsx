@@ -181,7 +181,7 @@ export default function Home() {
           <a className="small-button muted" href="https://www.instagram.com/mobileeventos/" target="_blank" rel="noreferrer">
             Ver novidades
           </a>
-          <a className="instagram-link" href="https://www.instagram.com/mobileeventos/" target="_blank" rel="noreferrer">
+          <a className="instagram-link instagram-link-mobile" href="https://www.instagram.com/mobileeventos/" target="_blank" rel="noreferrer">
             & visite nosso instagram
           </a>
         </div>
@@ -189,6 +189,9 @@ export default function Home() {
           <Image className="insta-a" src="/mobile-assets/20.jpg" alt="Mesa com cadeiras em ambiente verde" width={1440} height={1920} unoptimized />
           <a className="insta-handle-left" href="https://www.instagram.com/mobileeventos/" target="_blank" rel="noreferrer">
             @mobileeventos
+          </a>
+          <a className="instagram-link instagram-link-desktop" href="https://www.instagram.com/mobileeventos/" target="_blank" rel="noreferrer">
+            & visite nosso instagram
           </a>
           <Image className="insta-b" src="/mobile-assets/25.jpg" alt="Cenografia floral amarela" width={1440} height={1920} unoptimized />
           <Image className="insta-c" src="/mobile-assets/24.jpg" alt="Lounge com mobiliário natural" width={1440} height={1920} unoptimized />

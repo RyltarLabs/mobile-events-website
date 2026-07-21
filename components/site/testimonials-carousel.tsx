@@ -92,6 +92,9 @@ export function TestimonialsCarousel() {
 
   return (
     <section className="testimonial-section reveal" aria-labelledby="clients-title">
+      <button className="slider-arrow slider-arrow-side" aria-label="Depoimento anterior" type="button" onClick={() => scrollTestimonials("previous")}>
+        {"<-"}
+      </button>
       <div className="testimonial-content">
         <h2 id="clients-title">O que nossos clientes dizem</h2>
         <div
@@ -112,7 +115,7 @@ export function TestimonialsCarousel() {
             </article>
           ))}
         </div>
-        <div className="testimonial-controls" aria-label="Controles do carrossel de depoimentos">
+        <div className="testimonial-controls testimonial-controls-mobile" aria-label="Controles do carrossel de depoimentos">
           <button className="slider-arrow" aria-label="Depoimento anterior" type="button" onClick={() => scrollTestimonials("previous")}>
             {"<-"}
           </button>
@@ -121,6 +124,9 @@ export function TestimonialsCarousel() {
           </button>
         </div>
       </div>
+      <button className="slider-arrow slider-arrow-side" aria-label="Próximo depoimento" type="button" onClick={() => scrollTestimonials("next")}>
+        {"->"}
+      </button>
     </section>
   );
 }
