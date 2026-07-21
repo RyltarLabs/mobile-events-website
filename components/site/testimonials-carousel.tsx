@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type PointerEvent } from "react";
+import { useEffect, useMemo, useRef, type PointerEvent, type UIEvent } from "react";
 
 const testimonials = [
   {
@@ -25,13 +25,57 @@ const testimonials = [
   },
 ];
 
+const loopCopies = 9;
+const centerCopyIndex = Math.floor(loopCopies / 2);
+
 export function TestimonialsCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const frameRef = useRef<number | null>(null);
   const dragState = useRef({
     isDragging: false,
     startX: 0,
     scrollLeft: 0,
   });
+  const loopedTestimonials = useMemo(() => Array.from({ length: loopCopies }, () => testimonials).flat(), []);
+
+  useEffect(() => {
+    const track = trackRef.current;
+
+    if (!track) {
+      return;
+    }
+
+    track.scrollLeft = (track.scrollWidth / loopCopies) * centerCopyIndex;
+
+    return () => {
+      if (frameRef.current) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
+    };
+  }, []);
+
+  function normalizeScrollPosition(track: HTMLDivElement) {
+    const setWidth = track.scrollWidth / loopCopies;
+    const lowerLimit = setWidth * 2;
+    const upperLimit = setWidth * (loopCopies - 2);
+    const centerStart = setWidth * centerCopyIndex;
+
+    if (track.scrollLeft < lowerLimit) {
+      track.scrollLeft = centerStart + ((track.scrollLeft % setWidth) + setWidth) % setWidth;
+    } else if (track.scrollLeft > upperLimit) {
+      track.scrollLeft = centerStart + ((track.scrollLeft % setWidth) + setWidth) % setWidth;
+    }
+  }
+
+  function handleScroll(event: UIEvent<HTMLDivElement>) {
+    const track = event.currentTarget;
+
+    if (frameRef.current) {
+      window.cancelAnimationFrame(frameRef.current);
+    }
+
+    frameRef.current = window.requestAnimationFrame(() => normalizeScrollPosition(track));
+  }
 
   function scrollTestimonials(direction: "previous" | "next") {
     const track = trackRef.current;
@@ -41,6 +85,7 @@ export function TestimonialsCarousel() {
     }
 
     const distance = track.clientWidth * 0.92;
+    normalizeScrollPosition(track);
     track.scrollBy({
       left: direction === "next" ? distance : -distance,
       behavior: "smooth",
@@ -83,6 +128,7 @@ export function TestimonialsCarousel() {
     }
 
     dragState.current.isDragging = false;
+    normalizeScrollPosition(track);
     track.classList.remove("is-dragging");
 
     if (track.hasPointerCapture(event.pointerId)) {
@@ -107,9 +153,10 @@ export function TestimonialsCarousel() {
           onPointerUp={stopDragging}
           onPointerCancel={stopDragging}
           onPointerLeave={stopDragging}
+          onScroll={handleScroll}
         >
-          {testimonials.map((testimonial) => (
-            <article className="testimonial-slide" key={testimonial.author}>
+          {loopedTestimonials.map((testimonial, index) => (
+            <article className="testimonial-slide" key={`${testimonial.author}-${index}`}>
               <blockquote>{testimonial.quote}</blockquote>
               <p className="quote-author">{testimonial.author}</p>
             </article>

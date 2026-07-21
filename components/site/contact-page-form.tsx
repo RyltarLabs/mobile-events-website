@@ -2,7 +2,7 @@
 
 import { FormEvent } from "react";
 
-const whatsappNumber = "5571999999999";
+const whatsappNumber = "0000000000000";
 
 export function ContactPageForm() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -58,7 +58,7 @@ export function ContactPageForm() {
         <span>Data do evento</span>
         <input name="eventDate" type="date" required />
       </label>
-      <label>
+      <label className="contact-location-field">
         <span>Localização</span>
         <textarea name="location" rows={4} placeholder="Cidade, bairro, espaço do evento ou referência." required />
       </label>

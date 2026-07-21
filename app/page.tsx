@@ -18,10 +18,10 @@ const gallery = [
 ];
 
 const services = [
-  { label: "Casamentos", href: "/servicos/casamentos" },
-  { label: "Formaturas", href: "/servicos/formaturas" },
-  { label: "Aniversários", href: "/servicos/aniversarios" },
-  { label: "Corporativo", href: "/servicos/corporativo" },
+  { label: "Casamentos", href: "#" },
+  { label: "Formaturas", href: "#" },
+  { label: "Aniversários", href: "#" },
+  { label: "Corporativo", href: "#" },
 ];
 
 export default function Home() {
@@ -84,9 +84,9 @@ export default function Home() {
             <span>Mobiliários. Cenografia. Estrutura.</span>
             <span>Movidos pela satisfação de transformar ideias em ambientes memoráveis.</span>
           </p>
-          <Link className="small-button" href="/sobre">
+          <button className="small-button" type="button">
             Conheça
-          </Link>
+          </button>
         </div>
       </section>
 
@@ -97,6 +97,7 @@ export default function Home() {
           muted
           loop
           playsInline
+          preload="auto"
           poster="/mobile-assets/5.jpg"
           aria-label="Vídeo de bastidores e ambientação da Mobile Eventos"
         >
@@ -130,9 +131,9 @@ export default function Home() {
         <p className="eyebrow">Nossos serviços</p>
         <div className="services-list">
           {services.map((service) => (
-            <a key={service.label} href={service.href}>
+            <button key={service.label} type="button">
               {service.label}
-            </a>
+            </button>
           ))}
         </div>
       </section>
