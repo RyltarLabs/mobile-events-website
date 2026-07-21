@@ -304,7 +304,7 @@ textarea { font: inherit; }
   font-family: var(--serif);
   font-size: clamp(68px, 7.2vw, 120px);
   font-weight: 400;
-  line-height: 0.8;
+  line-height: 0.86;
   opacity: 1;
   justify-self: center;
   text-transform: uppercase;
@@ -500,6 +500,7 @@ textarea { font: inherit; }
 .vision-video::-webkit-media-controls,
 .vision-video::-webkit-media-controls-panel,
 .vision-video::-webkit-media-controls-play-button,
+.vision-video::-webkit-media-controls-overlay-play-button,
 .vision-video::-webkit-media-controls-start-playback-button {
   display: none !important;
   opacity: 0 !important;
@@ -515,7 +516,7 @@ textarea { font: inherit; }
   font-size: clamp(38px, 5vw, 92px);
   font-style: italic;
   font-weight: 400;
-  line-height: 0.88;
+  line-height: 0.96;
   text-transform: uppercase;
   text-shadow: 0 16px 48px rgb(0 0 0 / 0.5);
 }
@@ -594,7 +595,7 @@ textarea { font: inherit; }
   font-family: var(--serif);
   font-size: clamp(36px, 3.1vw, 58px);
   font-weight: 400;
-  line-height: 0.86;
+  line-height: 0.94;
   text-transform: uppercase;
 }
 
@@ -633,7 +634,7 @@ textarea { font: inherit; }
   font-family: var(--serif);
   font-size: clamp(16px, 1.22vw, 24px);
   font-weight: 400;
-  line-height: 0.9;
+  line-height: 1.04;
 }
 
 .quote-author {
@@ -745,7 +746,7 @@ textarea { font: inherit; }
 .services-section h2 {
   margin-bottom: 48px;
   font-size: clamp(42px, 4.7vw, 84px);
-  line-height: 0.9;
+  line-height: 0.98;
 }
 
 .services-list {
@@ -767,7 +768,7 @@ textarea { font: inherit; }
   cursor: pointer;
   font-family: var(--serif);
   font-size: clamp(34px, 4vw, 66px);
-  line-height: 0.94;
+  line-height: 1.02;
   letter-spacing: 0;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -807,7 +808,7 @@ textarea { font: inherit; }
 .form-section h2,
 .location-section h2 {
   font-size: clamp(38px, 4.5vw, 72px);
-  line-height: 0.92;
+  line-height: 1;
 }
 
 .catalog-grid {
@@ -898,7 +899,7 @@ textarea { font: inherit; }
   font-family: var(--serif);
   font-size: clamp(30px, 3.35vw, 64px);
   font-weight: 400;
-  line-height: 0.9;
+  line-height: 0.98;
   text-transform: uppercase;
   text-shadow: 0 14px 42px rgb(0 0 0 / 0.48);
 }
@@ -917,7 +918,7 @@ textarea { font: inherit; }
 
 .instagram-section h2 {
   font-size: clamp(58px, 6.7vw, 136px);
-  line-height: 0.86;
+  line-height: 0.94;
   white-space: normal;
 }
 
@@ -1490,7 +1491,7 @@ textarea { font: inherit; }
     width: min(100%, calc(100vw - 64px));
     max-width: 1180px;
     font-size: clamp(62px, 7.1vw, 106px);
-    line-height: 0.8;
+    line-height: 0.88;
   }
 
   .services-section h2,
@@ -1525,7 +1526,7 @@ textarea { font: inherit; }
     width: min(100%, calc(100vw - 48px));
     max-width: none;
     font-size: clamp(52px, 7.5vw, 64px);
-    line-height: 0.82;
+    line-height: 0.9;
     opacity: 1;
   }
 
@@ -1558,7 +1559,7 @@ textarea { font: inherit; }
 
   .intro-copy h2 {
     max-width: 620px;
-    line-height: 0.98;
+    line-height: 1.02;
   }
 
   .gallery-grid {
@@ -1638,7 +1639,7 @@ textarea { font: inherit; }
 
   .instagram-section h2 {
     font-size: clamp(54px, 16vw, 72px);
-    line-height: 0.84;
+    line-height: 0.92;
   }
 
   .instagram-section .small-button {
@@ -1707,7 +1708,7 @@ textarea { font: inherit; }
   .hero-copy h1 {
     width: min(100%, calc(100vw - 32px));
     font-size: clamp(42px, 7.4vw, 50px);
-    line-height: 0.82;
+    line-height: 0.92;
   }
 }
 
@@ -1728,7 +1729,7 @@ textarea { font: inherit; }
 @media (max-width: 430px) {
   .hero-copy h1 {
     font-size: clamp(52px, 13.6vw, 60px);
-    line-height: 0.82;
+    line-height: 0.92;
   }
 
   .hero-title-set-mid {
@@ -1783,20 +1784,20 @@ textarea { font: inherit; }
     width: min(260px, 100%);
     margin-bottom: 82px;
     font-size: clamp(34px, 10vw, 45px);
-    line-height: 0.86;
+    line-height: 0.96;
   }
 
   .testimonial-section blockquote {
     width: min(285px, 100%);
     font-size: clamp(17px, 5vw, 22px);
-    line-height: 0.82;
+    line-height: 1;
   }
 
   .quote-author {
     max-width: 230px;
     margin: 18px auto 0;
     font-size: 10px;
-    line-height: 0.95;
+    line-height: 1.12;
   }
 
   .testimonial-controls {
