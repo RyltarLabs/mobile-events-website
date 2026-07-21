@@ -1,6 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Camera, Mail, MessageCircle } from "lucide-react";
 import { buildWhatsAppLink } from "@/lib/catalog";
+
+const footerChannels = [
+  {
+    label: "WhatsApp",
+    href: buildWhatsAppLink("orçamento geral"),
+    icon: MessageCircle,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/mobileeventos/",
+    icon: Camera,
+  },
+  {
+    label: "Gmail",
+    href: "mailto:contato@mobileeventos.com.br",
+    icon: Mail,
+  },
+] as const;
 
 export function SiteFooter() {
   return (
@@ -22,19 +41,14 @@ export function SiteFooter() {
           <Image src="/mobile-logo-white.png" alt="" width={600} height={473} unoptimized />
         </Link>
         <div className="footer-brand-copy">
-          <p>Empresa de design e locação para eventos.</p>
-          <span>Atendendo Salvador, região metropolitana e onde o seu evento acontecer.</span>
-          <nav aria-label="Redes sociais e contato">
-            <a href="https://www.instagram.com/mobileeventos/" target="_blank" rel="noreferrer">
-              in
-            </a>
-            <a href="https://www.instagram.com/mobileeventos/" target="_blank" rel="noreferrer">
-              ig
-            </a>
-            <a href={buildWhatsAppLink("orçamento geral")} target="_blank" rel="noreferrer">
-              wa
-            </a>
-            <a href="mailto:contato@mobileeventos.com.br">em</a>
+          <p>Empresa de locação de mobiliários exclusivos e cenografia</p>
+          <nav className="footer-channel-list" aria-label="Canais de contato">
+            {footerChannels.map(({ label, href, icon: Icon }) => (
+              <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
+                <Icon aria-hidden="true" size={20} strokeWidth={1.5} />
+                <span>{label}</span>
+              </a>
+            ))}
           </nav>
           <small>copyright Mobile Eventos.</small>
         </div>
