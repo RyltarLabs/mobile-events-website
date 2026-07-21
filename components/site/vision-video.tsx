@@ -64,10 +64,10 @@ export function VisionVideo() {
       preload="auto"
       disablePictureInPicture
       controls={false}
-      src="/mobile-assets/snapinsta-1784518426556.mp4"
+      src="/mobile-assets/snapinsta-1784518426556-ios-safe.mp4"
       aria-label="Vídeo de bastidores e ambientação da Mobile Eventos"
     >
-      <source src="/mobile-assets/snapinsta-1784518426556.mp4" type="video/mp4; codecs=avc1,mp4a" />
+      <source src="/mobile-assets/snapinsta-1784518426556-ios-safe.mp4" type="video/mp4" />
     </video>
   );
 }
