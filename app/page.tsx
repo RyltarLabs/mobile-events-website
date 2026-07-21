@@ -5,6 +5,7 @@ import { MobileHeader } from "@/components/site/mobile-header";
 import { ScrollReveal } from "@/components/site/scroll-reveal";
 import { SiteFooter } from "@/components/site/site-footer";
 import { TestimonialsCarousel } from "@/components/site/testimonials-carousel";
+import { VisionVideo } from "@/components/site/vision-video";
 
 const gallery = [
   { src: "/mobile-assets/20.jpg", alt: "Mesas e cadeiras em ambiente verde para evento", className: "tile tile-a" },
@@ -91,18 +92,7 @@ export default function Home() {
       </section>
 
       <section className="vision-band reveal" aria-labelledby="vision-title">
-        <video
-          className="vision-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/mobile-assets/5.jpg"
-          aria-label="Vídeo de bastidores e ambientação da Mobile Eventos"
-        >
-          <source src="/mobile-assets/snapinsta-1784518426556.mp4" type="video/mp4" />
-        </video>
+        <VisionVideo />
         <h2 id="vision-title">Tiramos sua visão do papel</h2>
       </section>
 

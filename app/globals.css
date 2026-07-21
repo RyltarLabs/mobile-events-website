@@ -494,6 +494,16 @@ textarea { font: inherit; }
 .vision-video {
   position: absolute;
   inset: 0;
+  pointer-events: none;
+}
+
+.vision-video::-webkit-media-controls,
+.vision-video::-webkit-media-controls-panel,
+.vision-video::-webkit-media-controls-play-button,
+.vision-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  opacity: 0 !important;
+  -webkit-appearance: none;
 }
 
 .vision-band h2 {
